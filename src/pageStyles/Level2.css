@@ -1,0 +1,84 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.level-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  border-radius: 16px;
+  background-color: #f1f5f9;
+  border: 3px solid #000; /* black border */
+  color: transparent;
+  -webkit-text-stroke: 2px black; /* black outline for letters */
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.grid-tile.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px #3b82f6;
+}
+
+.grid-tile.correct {
+  background-color: #d1fae5;
+  border-color: #10b981;
+}
+
+.grid-tile.wrong {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.status {
+  margin-top: 2rem;
+}
+
+.listening-text {
+  font-size: 1.3rem;
+  color: #2563eb;
+}
+
+.done-text {
+  font-size: 1.3rem;
+  color: #22c55e;
+}
