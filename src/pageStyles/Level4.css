@@ -1,0 +1,143 @@
+/* Reset and base styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+/* Full-screen container */
+.level-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Word grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+}
+
+/* Word buttons */
+.grid button {
+  background-color: #ffffff;
+  color: #2d3748;
+  border: 2px solid #4a5568;
+  border-radius: 12px;
+  padding: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+  word-break: break-word;
+  text-align: center;
+}
+
+.grid button:disabled {
+  background-color: #cbd5e0;
+  color: #718096;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Optional current word highlight */
+.grid button.active {
+  outline: 4px solid #f6ad55;
+  background-color: #faf089;
+}
+
+/* Feedback overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #2d3748;
+  animation: scaleUp 0.4s ease;
+}
+
+.overlay.correct {
+  background: linear-gradient(135deg, #38a169 0%, #68d391 100%);
+  color: white;
+}
+
+.overlay.wrong {
+  background: linear-gradient(135deg, #e53e3e 0%, #f56565 100%);
+  color: white;
+}
+
+.overlay.final {
+  background: linear-gradient(135deg, #3182ce 0%, #63b3ed 100%);
+  color: white;
+}
+
+.overlay-message {
+  font-size: 2rem;
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0.8; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid button {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .overlay-message {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid button {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .overlay-message {
+    font-size: 1.2rem;
+  }
+}

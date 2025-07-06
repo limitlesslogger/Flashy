@@ -13,7 +13,7 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <header className="header">
-        <h1 className="main-title">Rapid Naming Drill</h1>
+        <h1 className="main-title">Flashy ⚡</h1>
         <p className="subtitle">
           Master your speed and accuracy with progressive difficulty levels
         </p>
